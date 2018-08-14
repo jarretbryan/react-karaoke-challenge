@@ -28,6 +28,7 @@ class KaraokeContainer extends Component {
     this.fetchData().then( () => {this.ogSongs = this.state.playlist})
   }
 
+
   clickPlay = (songObj) => {
     this.setState({
       ...this.state,
