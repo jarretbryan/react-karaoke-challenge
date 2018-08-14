@@ -33,6 +33,15 @@ class KaraokeContainer extends Component {
       ...this.state,
       lyricsDisplay: songObj
     })
+
+    let patchConfig = {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+        Accepts: 'application/json'
+      }
+    }
+    fetch(`http://192.168.3.119:3000/users/1/songs/${songObj.id}/play`, patchConfig).then(res => res.json())
   }
 
   handleFilter = (event) => {
